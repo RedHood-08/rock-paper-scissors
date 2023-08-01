@@ -8,35 +8,24 @@ function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
         return "Tie";
     }else{
-        switch (playerSelection) {
-            case "rock":
-                if(computerSelection === "scissors") {
-                    console.log("You Win! Rock beats Scissors");
-                }else {
-                    console.log("You Lose! Paper beats Rock");
-                }
-                break;
-
-            case "paper":
-                if(computerSelection === "rock") {
-                    console.log("You Win! Paper beats Rock");
-                }else {
-                    console.log("You Lose! Scissors beats Paper");
-                }
-                break;
-
-            case "scissors":
-                if(computerSelection === "paper") {
-                    console.log("You Win! Scissors beats Paper");
-                }else {
-                    console.log("You Lose! Rock beats Scissors");
-                }
-                break;
+        if( playerSelection === "rock" && computerSelection === "scissors" ||
+            playerSelection === "paper" && computerSelection === "rock" ||
+            playerSelection === "scissors" && computerSelection === "paper" ) {
+            
+            return `You Win! ${playerSelection} beats ${computerSelection}`;
+        }else {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    let score = 0;
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt().toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log("Round " + (i+1) + ": " + playRound(playerSelection, computerSelection));
+    }
+    console.log("You score is "+ score);
+}
