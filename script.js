@@ -27,7 +27,7 @@ function game() {
     const playerSelection = this.textContent.toLowerCase();
     const computerSelection = getComputerChoice();
     scoreboard.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
-    scoreboard.querySelector('#score').textContent = "Score   You: "+ score[0] + "   NPC: " + score[1];
+    scoreboard.querySelector('#score').textContent = "You: "+ score[0] + "   NPC: " + score[1];
 
     if(score[0] === 5) {
         scoreboard.querySelector('#winner').textContent = "You are the winner!!!";
@@ -43,6 +43,6 @@ function game() {
 const choices = document.querySelectorAll('button');
 const scoreboard = document.querySelector('#scoreboard');
 scoreboard.querySelector('#result').textContent = "";
-scoreboard.querySelector('#score').textContent = "Score   You: "+ score[0] + "   NPC: " + score[1];
+scoreboard.querySelector('#score').textContent = "You: "+ score[0] + "   NPC: " + score[1];
 
 choices.forEach(choice => choice.addEventListener('click', game));

@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#winner, #result, #score {
+    height: 20px;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+}
+
